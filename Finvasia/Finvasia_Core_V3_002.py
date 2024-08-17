@@ -240,10 +240,12 @@ def Shoonya_login():
 
             client_name = login_status.get("uname")
             token = login_status.get('susertoken')
-            print(login_status)
+            #print(login_status)
+            print("Broker message, if any : ", login_status.get('dmsg', "None"))
             Credential_sheet.range("c2").value = "Login Successful, Welcome " + client_name + "\nTool Validity : Demo" + "\nGenerated Token = (" + str(token) + ")"
             isConnected = 1
             Text2Speech("Login Successful, Welcome " + str(client_name) )
+            print("Login Successful, Welcome " + str(client_name) )
             Credential_sheet.range('c2').color = (118,224,280)
         else:
             try:
